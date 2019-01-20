@@ -48,3 +48,8 @@ data.links = data.links.map(l => {
 });
 
 console.log(data.links);
+
+fs.writeFile("data.json", JSON.stringify(data), "utf8", err => {
+  if (err) throw err;
+  console.log("data written to data.json");
+});

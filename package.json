@@ -1,0 +1,21 @@
+{
+  "name": "nfl-coach-network",
+  "version": "1.0.0",
+  "description": "Visualizing the relationships between the 2019 NFL Head Coaches",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "NFL",
+    "dataviz",
+    "data",
+    "visualization"
+  ],
+  "author": "Jeff Sims",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^5.7.0",
+    "lodash": "^4.17.11"
+  }
+}

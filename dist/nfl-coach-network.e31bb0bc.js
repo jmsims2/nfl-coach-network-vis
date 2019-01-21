@@ -28493,7 +28493,7 @@ var mousemoveNode = function mousemoveNode(d) {
 
 var mousemoveLink = function mousemoveLink(d) {
   console.log("link", d);
-  tooltip.html("".concat(d.source.name, " | ").concat(d.target.name, "<br/>").concat(d.links.join("<br/>"))).style("left", d3.mouse(this)[0] + 30 + "px").style("top", d3.mouse(this)[1] + "px");
+  tooltip.html("".concat(d.source.name, " <-> ").concat(d.target.name, "<br/>").concat(d.links.join("<br/>"))).style("left", d3.mouse(this)[0] + 30 + "px").style("top", d3.mouse(this)[1] + "px");
 };
 
 var mouseleave = function mouseleave(d) {
@@ -28501,12 +28501,49 @@ var mouseleave = function mouseleave(d) {
   d3.select(this).style("stroke", "none").style("opacity", 0.8);
 };
 
-d3.selectAll("circle").on("mouseover", mouseover).on("mousemove", mousemoveNode).on("mouseleave", mouseleave);
+d3.selectAll("circle").on("mouseover", mouseover).on("mousemove", mousemoveNode).on("mouseleave", mouseleave).on("click", connectedNodes);
 d3.selectAll("line").on("mouseover", function (d) {
   return tooltip.style("opacity", 1);
 }).on("mousemove", mousemoveLink).on("mouseleave", function (d) {
   return tooltip.style("opacity", 0);
 });
+var toggle = 0; //Create an array logging what is connected to what
+
+var linkedByIndex = {};
+
+for (var i = 0; i < _data.default.nodes.length; i++) {
+  linkedByIndex[i + "," + i] = 1;
+}
+
+_data.default.links.forEach(function (d) {
+  linkedByIndex[d.source.index + "," + d.target.index] = 1;
+}); //This function looks up whether a pair are neighbours
+
+
+function neighboring(a, b) {
+  return linkedByIndex[a.index + "," + b.index];
+}
+
+function connectedNodes() {
+  if (toggle == 0) {
+    //Reduce the opacity of all but the neighbouring nodes
+    var d = d3.select(this).node().__data__;
+
+    node.style("opacity", function (o) {
+      return neighboring(d, o) | neighboring(o, d) ? 1 : 0.1;
+    });
+    link.style("opacity", function (o) {
+      return d.index == o.source.index | d.index == o.target.index ? 1 : 0.1;
+    }); //Reduce the op
+
+    toggle = 1;
+  } else {
+    //Put them back to opacity=1
+    node.style("opacity", 1);
+    link.style("opacity", 1);
+    toggle = 0;
+  }
+}
 },{"./data.json":"data.json","d3":"node_modules/d3/index.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

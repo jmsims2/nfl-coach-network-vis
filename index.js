@@ -112,7 +112,7 @@ let mousemoveNode = function(d) {
 let mousemoveLink = function(d) {
   console.log("link", d);
   tooltip
-    .html(`${d.source.name} | ${d.target.name}<br/>${d.links.join("<br/>")}`)
+    .html(`${d.source.name} <-> ${d.target.name}<br/>${d.links.join("<br/>")}`)
     .style("left", d3.mouse(this)[0] + 30 + "px")
     .style("top", d3.mouse(this)[1] + "px");
 };
@@ -126,9 +126,45 @@ let mouseleave = function(d) {
 d3.selectAll("circle")
   .on("mouseover", mouseover)
   .on("mousemove", mousemoveNode)
-  .on("mouseleave", mouseleave);
+  .on("mouseleave", mouseleave)
+  .on("click", connectedNodes);
 
 d3.selectAll("line")
   .on("mouseover", d => tooltip.style("opacity", 1))
   .on("mousemove", mousemoveLink)
   .on("mouseleave", d => tooltip.style("opacity", 0));
+
+let toggle = 0;
+//Create an array logging what is connected to what
+let linkedByIndex = {};
+for (let i = 0; i < data.nodes.length; i++) {
+  linkedByIndex[i + "," + i] = 1;
+}
+data.links.forEach(function(d) {
+  linkedByIndex[d.source.index + "," + d.target.index] = 1;
+});
+//This function looks up whether a pair are neighbours
+function neighboring(a, b) {
+  return linkedByIndex[a.index + "," + b.index];
+}
+function connectedNodes() {
+  if (toggle == 0) {
+    //Reduce the opacity of all but the neighbouring nodes
+    let d = d3.select(this).node().__data__;
+    node.style("opacity", function(o) {
+      return neighboring(d, o) | neighboring(o, d) ? 1 : 0.1;
+    });
+    link.style("opacity", function(o) {
+      return (d.index == o.source.index) | (d.index == o.target.index)
+        ? 1
+        : 0.1;
+    });
+    //Reduce the op
+    toggle = 1;
+  } else {
+    //Put them back to opacity=1
+    node.style("opacity", 1);
+    link.style("opacity", 1);
+    toggle = 0;
+  }
+}

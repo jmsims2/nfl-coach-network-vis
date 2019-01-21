@@ -4,6 +4,7 @@
   "description": "Visualizing the relationships between the 2019 NFL Head Coaches",
   "main": "index.html",
   "scripts": {
+    "start": "parcel index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

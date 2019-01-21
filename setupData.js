@@ -31,24 +31,31 @@ links.forEach(link => {
     target: link.target
   });
   if (index > -1) {
-    data.links[index].strength += 1;
+    data.links[index].weight += 1;
   } else {
-    data.links.push({ source: link.source, target: link.target, strength: 1 });
+    let reverseIndex = _.findIndex(data.links, {
+      source: link.target,
+      target: link.source
+    });
+    if (reverseIndex < 0) {
+      data.links.push({
+        source: link.source,
+        target: link.target,
+        weight: 1
+      });
+    }
   }
 });
 
-let strengths = data.links.map(l => l.strength);
+let weights = data.links.map(l => l.weight);
 let scale = d3
   .scaleLinear()
-  .domain([0, d3.max(strengths)])
+  .domain([0, d3.max(weights)])
   .range([0, 1]);
 data.links = data.links.map(l => {
-  l.strength = scale(l.strength);
+  l.weight = scale(l.weight);
   return l;
 });
-
-console.log(data.links);
-
 fs.writeFile("data.json", JSON.stringify(data), "utf8", err => {
   if (err) throw err;
   console.log("data written to data.json");

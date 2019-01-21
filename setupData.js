@@ -18,7 +18,11 @@ data.nodes.forEach(node => {
     coaches.forEach(coach => {
       if (coach.name !== node.name) {
         if (c.team === coach.team && c.year === coach.year) {
-          links.push({ source: c.name, target: coach.name });
+          links.push({
+            source: c.name,
+            target: coach.name,
+            link: coach.year + " " + coach.team
+          });
         }
       }
     });
@@ -32,6 +36,7 @@ links.forEach(link => {
   });
   if (index > -1) {
     data.links[index].weight += 1;
+    data.links[index].links.push(link.link);
   } else {
     let reverseIndex = _.findIndex(data.links, {
       source: link.target,
@@ -41,7 +46,8 @@ links.forEach(link => {
       data.links.push({
         source: link.source,
         target: link.target,
-        weight: 1
+        weight: 1,
+        links: [link.link]
       });
     }
   }

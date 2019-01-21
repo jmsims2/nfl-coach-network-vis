@@ -270,331 +270,413 @@ module.exports = {
   "links": [{
     "source": "Matt Patricia",
     "target": "Bill Belichick",
-    "weight": 0.9333333333333333
+    "weight": 0.9333333333333333,
+    "links": ["2004 New England Patriots", "2005 New England Patriots", "2006 New England Patriots", "2007 New England Patriots", "2008 New England Patriots", "2009 New England Patriots", "2010 New England Patriots", "2011 New England Patriots", "2012 New England Patriots", "2013 New England Patriots", "2014 New England Patriots", "2015 New England Patriots", "2016 New England Patriots", "2017 New England Patriots"]
   }, {
     "source": "Matt Patricia",
     "target": "Mike Vrabel",
-    "weight": 0.3333333333333333
+    "weight": 0.3333333333333333,
+    "links": ["2004 New England Patriots", "2005 New England Patriots", "2006 New England Patriots", "2007 New England Patriots", "2008 New England Patriots"]
   }, {
     "source": "Matt Patricia",
     "target": "Brian Flores",
-    "weight": 0.9333333333333333
+    "weight": 0.9333333333333333,
+    "links": ["2004 New England Patriots", "2005 New England Patriots", "2006 New England Patriots", "2007 New England Patriots", "2008 New England Patriots", "2009 New England Patriots", "2010 New England Patriots", "2011 New England Patriots", "2012 New England Patriots", "2013 New England Patriots", "2014 New England Patriots", "2015 New England Patriots", "2016 New England Patriots", "2017 New England Patriots"]
   }, {
     "source": "Matt Patricia",
     "target": "Bill O'Brien",
-    "weight": 0.3333333333333333
+    "weight": 0.3333333333333333,
+    "links": ["2007 New England Patriots", "2008 New England Patriots", "2009 New England Patriots", "2010 New England Patriots", "2011 New England Patriots"]
   }, {
     "source": "Matt Nagy",
     "target": "Sean McDermott",
-    "weight": 0.2
+    "weight": 0.2,
+    "links": ["2008 Philadelphia Eagles", "2009 Philadelphia Eagles", "2010 Philadelphia Eagles"]
   }, {
     "source": "Matt Nagy",
     "target": "Pat Shurmur",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2008 Philadelphia Eagles"]
   }, {
     "source": "Matt Nagy",
     "target": "Andy Reid",
-    "weight": 0.6666666666666666
+    "weight": 0.6666666666666666,
+    "links": ["2008 Philadelphia Eagles", "2009 Philadelphia Eagles", "2010 Philadelphia Eagles", "2011 Philadelphia Eagles", "2012 Philadelphia Eagles", "2013 Kansas City Chiefs", "2014 Kansas City Chiefs", "2015 Kansas City Chiefs", "2016 Kansas City Chiefs", "2017 Kansas City Chiefs"]
   }, {
     "source": "Matt Nagy",
     "target": "Doug Pedersen",
-    "weight": 0.4666666666666667
+    "weight": 0.4666666666666667,
+    "links": ["2009 Philadelphia Eagles", "2010 Philadelphia Eagles", "2011 Philadelphia Eagles", "2012 Philadelphia Eagles", "2013 Kansas City Chiefs", "2014 Kansas City Chiefs", "2015 Kansas City Chiefs"]
   }, {
     "source": "Matt Nagy",
     "target": "Vic Fangio",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2018 Chicago Bears"]
   }, {
     "source": "Matt LaFleur",
     "target": "Kyle Shanahan",
-    "weight": 0.5333333333333333
+    "weight": 0.5333333333333333,
+    "links": ["2008 Houston Texans", "2009 Houston Texans", "2010 Washington Redskins", "2011 Washington Redskins", "2012 Washington Redskins", "2013 Washington Redskins", "2015 Atlanta Falcons", "2016 Atlanta Falcons"]
   }, {
     "source": "Matt LaFleur",
     "target": "Sean McVay",
-    "weight": 0.3333333333333333
+    "weight": 0.3333333333333333,
+    "links": ["2010 Washington Redskins", "2011 Washington Redskins", "2012 Washington Redskins", "2013 Washington Redskins", "2017 Los Angeles Rams"]
   }, {
     "source": "Matt LaFleur",
     "target": "Dan Quinn",
-    "weight": 0.13333333333333333
+    "weight": 0.13333333333333333,
+    "links": ["2015 Atlanta Falcons", "2016 Atlanta Falcons"]
   }, {
     "source": "Matt LaFleur",
     "target": "Zac Taylor",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2017 Los Angeles Rams"]
   }, {
     "source": "Matt LaFleur",
     "target": "Mike Vrabel",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2018 Tennessee Titans"]
   }, {
     "source": "Mike Zimmer",
     "target": "Jason Garrett",
-    "weight": 0.4
+    "weight": 0.4,
+    "links": ["1994 Dallas Cowboys", "1995 Dallas Cowboys", "1996 Dallas Cowboys", "1997 Dallas Cowboys", "1998 Dallas Cowboys", "1999 Dallas Cowboys"]
   }, {
     "source": "Mike Zimmer",
     "target": "Sean Payton",
-    "weight": 0.2
+    "weight": 0.2,
+    "links": ["2003 Dallas Cowboys", "2004 Dallas Cowboys", "2005 Dallas Cowboys"]
   }, {
     "source": "Mike Zimmer",
     "target": "Anthony Lynn",
-    "weight": 0.13333333333333333
+    "weight": 0.13333333333333333,
+    "links": ["2005 Dallas Cowboys", "2006 Dallas Cowboys"]
   }, {
     "source": "Mike Zimmer",
     "target": "Freddie Kitchens",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2006 Dallas Cowboys"]
   }, {
     "source": "Mike Zimmer",
     "target": "Jay Gruden",
-    "weight": 0.2
+    "weight": 0.2,
+    "links": ["2011 Cincinnati Bengals", "2012 Cincinnati Bengals", "2013 Cincinnati Bengals"]
   }, {
     "source": "Mike Zimmer",
     "target": "Pat Shurmur",
-    "weight": 0.13333333333333333
+    "weight": 0.13333333333333333,
+    "links": ["2016 Minnesota Vikings", "2017 Minnesota Vikings"]
   }, {
     "source": "Freddie Kitchens",
     "target": "Adam Gase",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2000 LSU"]
   }, {
     "source": "Freddie Kitchens",
     "target": "Anthony Lynn",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2006 Dallas Cowboys"]
   }, {
     "source": "Freddie Kitchens",
     "target": "Frank Reich",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2012 Arizona Cardinals"]
   }, {
     "source": "Freddie Kitchens",
     "target": "Bruce Arians",
-    "weight": 0.3333333333333333
+    "weight": 0.3333333333333333,
+    "links": ["2013 Arizona Cardinals", "2014 Arizona Cardinals", "2015 Arizona Cardinals", "2016 Arizona Cardinals", "2017 Arizona Cardinals"]
   }, {
     "source": "Mike Tomlin",
     "target": "Dan Quinn",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["1995 VMI"]
   }, {
     "source": "Mike Tomlin",
     "target": "Jay Gruden",
-    "weight": 0.26666666666666666
+    "weight": 0.26666666666666666,
+    "links": ["2002 Tampa Bay Buccaneers", "2003 Tampa Bay Buccaneers", "2004 Tampa Bay Buccaneers", "2005 Tampa Bay Buccaneers"]
   }, {
     "source": "Mike Tomlin",
     "target": "Jon Gruden",
-    "weight": 0.26666666666666666
+    "weight": 0.26666666666666666,
+    "links": ["2002 Tampa Bay Buccaneers", "2003 Tampa Bay Buccaneers", "2004 Tampa Bay Buccaneers", "2005 Tampa Bay Buccaneers"]
   }, {
     "source": "Mike Tomlin",
     "target": "Kyle Shanahan",
-    "weight": 0.13333333333333333
+    "weight": 0.13333333333333333,
+    "links": ["2004 Tampa Bay Buccaneers", "2005 Tampa Bay Buccaneers"]
   }, {
     "source": "Mike Tomlin",
     "target": "Bruce Arians",
-    "weight": 0.3333333333333333
+    "weight": 0.3333333333333333,
+    "links": ["2007 Pittsburgh Steelers", "2008 Pittsburgh Steelers", "2009 Pittsburgh Steelers", "2010 Pittsburgh Steelers", "2011 Pittsburgh Steelers"]
   }, {
     "source": "John Harbaugh",
     "target": "Sean Payton",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["1998 Philadelphia Eagles"]
   }, {
     "source": "John Harbaugh",
     "target": "Sean McDermott",
-    "weight": 0.6
+    "weight": 0.6,
+    "links": ["1999 Philadelphia Eagles", "2000 Philadelphia Eagles", "2001 Philadelphia Eagles", "2002 Philadelphia Eagles", "2003 Philadelphia Eagles", "2004 Philadelphia Eagles", "2005 Philadelphia Eagles", "2006 Philadelphia Eagles", "2007 Philadelphia Eagles"]
   }, {
     "source": "John Harbaugh",
     "target": "Pat Shurmur",
-    "weight": 0.6
+    "weight": 0.6,
+    "links": ["1999 Philadelphia Eagles", "2000 Philadelphia Eagles", "2001 Philadelphia Eagles", "2002 Philadelphia Eagles", "2003 Philadelphia Eagles", "2004 Philadelphia Eagles", "2005 Philadelphia Eagles", "2006 Philadelphia Eagles", "2007 Philadelphia Eagles"]
   }, {
     "source": "John Harbaugh",
     "target": "Doug Pedersen",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["1999 Philadelphia Eagles"]
   }, {
     "source": "John Harbaugh",
     "target": "Ron Rivera",
-    "weight": 0.3333333333333333
+    "weight": 0.3333333333333333,
+    "links": ["1999 Philadelphia Eagles", "2000 Philadelphia Eagles", "2001 Philadelphia Eagles", "2002 Philadelphia Eagles", "2003 Philadelphia Eagles"]
   }, {
     "source": "John Harbaugh",
     "target": "Andy Reid",
-    "weight": 0.6
+    "weight": 0.6,
+    "links": ["1999 Philadelphia Eagles", "2000 Philadelphia Eagles", "2001 Philadelphia Eagles", "2002 Philadelphia Eagles", "2003 Philadelphia Eagles", "2004 Philadelphia Eagles", "2005 Philadelphia Eagles", "2006 Philadelphia Eagles", "2007 Philadelphia Eagles"]
   }, {
     "source": "John Harbaugh",
     "target": "Vic Fangio",
-    "weight": 0.13333333333333333
+    "weight": 0.13333333333333333,
+    "links": ["2008 Baltimore Ravens", "2009 Baltimore Ravens"]
   }, {
     "source": "Zac Taylor",
     "target": "Jay Gruden",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2007 Tampa Bay Buccaneers"]
   }, {
     "source": "Zac Taylor",
     "target": "Jon Gruden",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2007 Tampa Bay Buccaneers"]
   }, {
     "source": "Zac Taylor",
     "target": "Sean McVay",
-    "weight": 0.13333333333333333
+    "weight": 0.13333333333333333,
+    "links": ["2017 Los Angeles Rams", "2018 Los Angeles Rams"]
   }, {
     "source": "Bill Belichick",
     "target": "Mike Vrabel",
-    "weight": 0.5333333333333333
+    "weight": 0.5333333333333333,
+    "links": ["2001 New England Patriots", "2002 New England Patriots", "2003 New England Patriots", "2004 New England Patriots", "2005 New England Patriots", "2006 New England Patriots", "2007 New England Patriots", "2008 New England Patriots"]
   }, {
     "source": "Bill Belichick",
     "target": "Kliff Kingsbury",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2003 New England Patriots"]
   }, {
     "source": "Bill Belichick",
     "target": "Brian Flores",
-    "weight": 1
+    "weight": 1,
+    "links": ["2004 New England Patriots", "2005 New England Patriots", "2006 New England Patriots", "2007 New England Patriots", "2008 New England Patriots", "2009 New England Patriots", "2010 New England Patriots", "2011 New England Patriots", "2012 New England Patriots", "2013 New England Patriots", "2014 New England Patriots", "2015 New England Patriots", "2016 New England Patriots", "2017 New England Patriots", "2018 New England Patriots"]
   }, {
     "source": "Bill Belichick",
     "target": "Bill O'Brien",
-    "weight": 0.3333333333333333
+    "weight": 0.3333333333333333,
+    "links": ["2007 New England Patriots", "2008 New England Patriots", "2009 New England Patriots", "2010 New England Patriots", "2011 New England Patriots"]
   }, {
     "source": "Adam Gase",
     "target": "Vic Fangio",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2015 Chicago Bears"]
   }, {
     "source": "Sean McDermott",
     "target": "Pat Shurmur",
-    "weight": 0.6666666666666666
+    "weight": 0.6666666666666666,
+    "links": ["1999 Philadelphia Eagles", "2000 Philadelphia Eagles", "2001 Philadelphia Eagles", "2002 Philadelphia Eagles", "2003 Philadelphia Eagles", "2004 Philadelphia Eagles", "2005 Philadelphia Eagles", "2006 Philadelphia Eagles", "2007 Philadelphia Eagles", "2008 Philadelphia Eagles"]
   }, {
     "source": "Sean McDermott",
     "target": "Doug Pedersen",
-    "weight": 0.2
+    "weight": 0.2,
+    "links": ["1999 Philadelphia Eagles", "2009 Philadelphia Eagles", "2010 Philadelphia Eagles"]
   }, {
     "source": "Sean McDermott",
     "target": "Ron Rivera",
-    "weight": 0.7333333333333333
+    "weight": 0.7333333333333333,
+    "links": ["1999 Philadelphia Eagles", "2000 Philadelphia Eagles", "2001 Philadelphia Eagles", "2002 Philadelphia Eagles", "2003 Philadelphia Eagles", "2011 Carolina Panthers", "2012 Carolina Panthers", "2013 Carolina Panthers", "2014 Carolina Panthers", "2015 Carolina Panthers", "2016 Carolina Panthers"]
   }, {
     "source": "Sean McDermott",
     "target": "Andy Reid",
-    "weight": 0.8
+    "weight": 0.8,
+    "links": ["1999 Philadelphia Eagles", "2000 Philadelphia Eagles", "2001 Philadelphia Eagles", "2002 Philadelphia Eagles", "2003 Philadelphia Eagles", "2004 Philadelphia Eagles", "2005 Philadelphia Eagles", "2006 Philadelphia Eagles", "2007 Philadelphia Eagles", "2008 Philadelphia Eagles", "2009 Philadelphia Eagles", "2010 Philadelphia Eagles"]
   }, {
     "source": "Pat Shurmur",
     "target": "Doug Pedersen",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["1999 Philadelphia Eagles"]
   }, {
     "source": "Pat Shurmur",
     "target": "Ron Rivera",
-    "weight": 0.3333333333333333
+    "weight": 0.3333333333333333,
+    "links": ["1999 Philadelphia Eagles", "2000 Philadelphia Eagles", "2001 Philadelphia Eagles", "2002 Philadelphia Eagles", "2003 Philadelphia Eagles"]
   }, {
     "source": "Pat Shurmur",
     "target": "Andy Reid",
-    "weight": 0.6666666666666666
+    "weight": 0.6666666666666666,
+    "links": ["1999 Philadelphia Eagles", "2000 Philadelphia Eagles", "2001 Philadelphia Eagles", "2002 Philadelphia Eagles", "2003 Philadelphia Eagles", "2004 Philadelphia Eagles", "2005 Philadelphia Eagles", "2006 Philadelphia Eagles", "2007 Philadelphia Eagles", "2008 Philadelphia Eagles"]
   }, {
     "source": "Doug Pedersen",
     "target": "Andy Reid",
-    "weight": 0.7333333333333333
+    "weight": 0.7333333333333333,
+    "links": ["1996 Green Bay Packers", "1997 Green Bay Packers", "1998 Green Bay Packers", "1999 Philadelphia Eagles", "2009 Philadelphia Eagles", "2010 Philadelphia Eagles", "2011 Philadelphia Eagles", "2012 Philadelphia Eagles", "2013 Kansas City Chiefs", "2014 Kansas City Chiefs", "2015 Kansas City Chiefs"]
   }, {
     "source": "Doug Pedersen",
     "target": "Ron Rivera",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["1999 Philadelphia Eagles"]
   }, {
     "source": "Doug Pedersen",
     "target": "Frank Reich",
-    "weight": 0.13333333333333333
+    "weight": 0.13333333333333333,
+    "links": ["2016 Philadelphia Eagles", "2017 Philadelphia Eagles"]
   }, {
     "source": "Jason Garrett",
     "target": "Doug Marrone",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["1989 New Orleans Saints"]
   }, {
     "source": "Jason Garrett",
     "target": "Vic Fangio",
-    "weight": 0.13333333333333333
+    "weight": 0.13333333333333333,
+    "links": ["1989 New Orleans Saints", "1990 New Orleans Saints"]
   }, {
     "source": "Jason Garrett",
     "target": "Sean Payton",
-    "weight": 0.2
+    "weight": 0.2,
+    "links": ["2000 New York Giants", "2001 New York Giants", "2002 New York Giants"]
   }, {
     "source": "Jason Garrett",
     "target": "Dan Quinn",
-    "weight": 0.13333333333333333
+    "weight": 0.13333333333333333,
+    "links": ["2005 Miami Dolphins", "2006 Miami Dolphins"]
   }, {
     "source": "Jay Gruden",
     "target": "Jon Gruden",
-    "weight": 0.4666666666666667
+    "weight": 0.4666666666666667,
+    "links": ["2002 Tampa Bay Buccaneers", "2003 Tampa Bay Buccaneers", "2004 Tampa Bay Buccaneers", "2005 Tampa Bay Buccaneers", "2006 Tampa Bay Buccaneers", "2007 Tampa Bay Buccaneers", "2008 Tampa Bay Buccaneers"]
   }, {
     "source": "Jay Gruden",
     "target": "Kyle Shanahan",
-    "weight": 0.13333333333333333
+    "weight": 0.13333333333333333,
+    "links": ["2004 Tampa Bay Buccaneers", "2005 Tampa Bay Buccaneers"]
   }, {
     "source": "Jay Gruden",
     "target": "Sean McVay",
-    "weight": 0.3333333333333333
+    "weight": 0.3333333333333333,
+    "links": ["2008 Tampa Bay Buccaneers", "2009 Florida Tuskers", "2014 Washington Redskins", "2015 Washington Redskins", "2016 Washington Redskins"]
   }, {
     "source": "Bruce Arians",
     "target": "Vic Fangio",
-    "weight": 0.13333333333333333
+    "weight": 0.13333333333333333,
+    "links": ["1999 Indianapolis Colts", "2000 Indianapolis Colts"]
   }, {
     "source": "Dan Quinn",
     "target": "Pete Carroll",
-    "weight": 0.2
+    "weight": 0.2,
+    "links": ["2010 Seattle Seahawks", "2013 Seattle Seahawks", "2014 Seattle Seahawks"]
   }, {
     "source": "Dan Quinn",
     "target": "Kyle Shanahan",
-    "weight": 0.13333333333333333
+    "weight": 0.13333333333333333,
+    "links": ["2015 Atlanta Falcons", "2016 Atlanta Falcons"]
   }, {
     "source": "Sean Payton",
     "target": "Ron Rivera",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["1987 Chicago Bears"]
   }, {
     "source": "Sean Payton",
     "target": "Jon Gruden",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["1997 Philadelphia Eagles"]
   }, {
     "source": "Sean Payton",
     "target": "Anthony Lynn",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2005 Dallas Cowboys"]
   }, {
     "source": "Sean Payton",
     "target": "Doug Marrone",
-    "weight": 0.2
+    "weight": 0.2,
+    "links": ["2006 New Orleans Saints", "2007 New Orleans Saints", "2008 New Orleans Saints"]
   }, {
     "source": "Ron Rivera",
     "target": "Andy Reid",
-    "weight": 0.3333333333333333
+    "weight": 0.3333333333333333,
+    "links": ["1999 Philadelphia Eagles", "2000 Philadelphia Eagles", "2001 Philadelphia Eagles", "2002 Philadelphia Eagles", "2003 Philadelphia Eagles"]
   }, {
     "source": "Doug Marrone",
     "target": "Vic Fangio",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["1989 New Orleans Saints"]
   }, {
     "source": "Doug Marrone",
     "target": "Bill O'Brien",
-    "weight": 0.26666666666666666
+    "weight": 0.26666666666666666,
+    "links": ["1996 Georgia Tech", "1997 Georgia Tech", "1998 Georgia Tech", "1999 Georgia Tech"]
   }, {
     "source": "Doug Marrone",
     "target": "Kliff Kingsbury",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2005 New York Jets"]
   }, {
     "source": "Mike Vrabel",
     "target": "Kliff Kingsbury",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2003 New England Patriots"]
   }, {
     "source": "Mike Vrabel",
     "target": "Brian Flores",
-    "weight": 0.3333333333333333
+    "weight": 0.3333333333333333,
+    "links": ["2004 New England Patriots", "2005 New England Patriots", "2006 New England Patriots", "2007 New England Patriots", "2008 New England Patriots"]
   }, {
     "source": "Mike Vrabel",
     "target": "Bill O'Brien",
-    "weight": 0.4
+    "weight": 0.4,
+    "links": ["2007 New England Patriots", "2008 New England Patriots", "2014 Houston Texans", "2015 Houston Texans", "2016 Houston Texans", "2017 Houston Texans"]
   }, {
     "source": "Frank Reich",
     "target": "Vic Fangio",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["1995 Carolina Panthers"]
   }, {
     "source": "Bill O'Brien",
     "target": "Brian Flores",
-    "weight": 0.3333333333333333
+    "weight": 0.3333333333333333,
+    "links": ["2007 New England Patriots", "2008 New England Patriots", "2009 New England Patriots", "2010 New England Patriots", "2011 New England Patriots"]
   }, {
     "source": "Andy Reid",
     "target": "Jon Gruden",
-    "weight": 0.2
+    "weight": 0.2,
+    "links": ["1992 Green Bay Packers", "1993 Green Bay Packers", "1994 Green Bay Packers"]
   }, {
     "source": "Jon Gruden",
     "target": "Kyle Shanahan",
-    "weight": 0.13333333333333333
+    "weight": 0.13333333333333333,
+    "links": ["2004 Tampa Bay Buccaneers", "2005 Tampa Bay Buccaneers"]
   }, {
     "source": "Jon Gruden",
     "target": "Sean McVay",
-    "weight": 0.06666666666666667
+    "weight": 0.06666666666666667,
+    "links": ["2008 Tampa Bay Buccaneers"]
   }, {
     "source": "Anthony Lynn",
     "target": "Pete Carroll",
-    "weight": 0.13333333333333333
+    "weight": 0.13333333333333333,
+    "links": ["1995 San Francisco 49ers", "1996 San Francisco 49ers"]
   }, {
     "source": "Sean McVay",
     "target": "Kyle Shanahan",
-    "weight": 0.26666666666666666
+    "weight": 0.26666666666666666,
+    "links": ["2010 Washington Redskins", "2011 Washington Redskins", "2012 Washington Redskins", "2013 Washington Redskins"]
   }]
 };
 },{}],"node_modules/d3/dist/package.js":[function(require,module,exports) {
@@ -28365,20 +28447,21 @@ _data.default.links.forEach(function (l) {
   return console.log("link", l);
 });
 
-var width = 1000;
-var height = 500;
+var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 var simulation = d3.forceSimulation().force("link", d3.forceLink().id(function (d) {
   return d.name;
-})).force("charge", d3.forceManyBody().strength(-300).distanceMax(550).distanceMin(200)).force("center", d3.forceCenter(width / 2, height / 2));
+}).distance(50)).force("charge", d3.forceManyBody().strength(-400)).force("center", d3.forceCenter(width / 2, height / 2));
 d3.select("svg").empty();
-var svg = d3.select("svg");
+var tooltip = d3.select("body").append("div").style("opacity", 0).attr("class", "tooltip").style("background-color", "white").style("border", "solid").style("border-width", "2px").style("border-radius", "5px").style("padding", "5px").style("position", "absolute");
+var svg = d3.select("svg").attr("width", width).attr("height", height);
 var link = svg.append("g").attr("class", "links").selectAll("line").data(_data.default.links).enter().append("line");
 var node = svg.append("g").attr("class", "nodes").selectAll("circle").data(_data.default.nodes).enter().append("circle").attr("r", 20); //.attr("fill", "url(#image)");
 //.attr("filter", "url(#inset-shadow)");
+// node.append("title").text(function(d) {
+//   return d.name;
+// });
 
-node.append("title").text(function (d) {
-  return d.name;
-});
 simulation.nodes(_data.default.nodes).on("tick", ticked);
 simulation.force("link").links(_data.default.links);
 
@@ -28398,6 +28481,32 @@ function ticked() {
     return d.y;
   });
 }
+
+var mouseover = function mouseover(d) {
+  tooltip.style("opacity", 1);
+  d3.select(this).style("stroke", "black").style("opacity", 1);
+};
+
+var mousemoveNode = function mousemoveNode(d) {
+  tooltip.html(d.name).style("left", d3.mouse(this)[0] + 30 + "px").style("top", d3.mouse(this)[1] + "px");
+};
+
+var mousemoveLink = function mousemoveLink(d) {
+  console.log("link", d);
+  tooltip.html("".concat(d.source.name, " | ").concat(d.target.name, "<br/>").concat(d.links.join("<br/>"))).style("left", d3.mouse(this)[0] + 30 + "px").style("top", d3.mouse(this)[1] + "px");
+};
+
+var mouseleave = function mouseleave(d) {
+  tooltip.style("opacity", 0);
+  d3.select(this).style("stroke", "none").style("opacity", 0.8);
+};
+
+d3.selectAll("circle").on("mouseover", mouseover).on("mousemove", mousemoveNode).on("mouseleave", mouseleave);
+d3.selectAll("line").on("mouseover", function (d) {
+  return tooltip.style("opacity", 1);
+}).on("mousemove", mousemoveLink).on("mouseleave", function (d) {
+  return tooltip.style("opacity", 0);
+});
 },{"./data.json":"data.json","d3":"node_modules/d3/index.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

@@ -46,6 +46,34 @@ let svg = d3
   .attr("width", width)
   .attr("height", height);
 
+// let defs = svg.append("defs");
+
+// let imgPattern = defs
+//   .selectAll("pattern")
+//   .data(data.nodes)
+//   .enter()
+//   .append("pattern")
+//   .attr("id", d => {
+//     return `${d.name
+//       .toLowerCase()
+//       .replace(" ", "-")
+//       .replace("'", "")}`;
+//   })
+//   .attr("width", 1)
+//   .attr("height", 1)
+//   .attr("patternUnits", "objectBoundingBox")
+//   .append("image")
+//   .attr("x", 0)
+//   .attr("y", 0)
+//   .attr("width", 40)
+//   .attr("height", 40)
+//   .attr("xlink:xlink:href", d => {
+//     return `./images/${d.name
+//       .toLowerCase()
+//       .replace(" ", "-")
+//       .replace("'", "")}.png`;
+//   });
+
 let link = svg
   .append("g")
   .attr("class", "links")
@@ -61,14 +89,13 @@ let node = svg
   .data(data.nodes)
   .enter()
   .append("circle")
-  .attr("r", 20);
-
-//.attr("fill", "url(#image)");
-//.attr("filter", "url(#inset-shadow)");
-
-// node.append("title").text(function(d) {
-//   return d.name;
-// });
+  .attr("r", 20)
+  .attr("fill", d => {
+    return `url(#${d.name
+      .toLowerCase()
+      .replace(" ", "-")
+      .replace("'", "")})`;
+  });
 
 simulation.nodes(data.nodes).on("tick", ticked);
 simulation.force("link").links(data.links);
@@ -112,7 +139,9 @@ let mousemoveNode = function(d) {
 let mousemoveLink = function(d) {
   console.log("link", d);
   tooltip
-    .html(`${d.source.name} <-> ${d.target.name}<br/>${d.links.join("<br/>")}`)
+    .html(
+      `${d.source.name} &#8596 ${d.target.name}<br/>${d.links.join("<br/>")}`
+    )
     .style("left", d3.mouse(this)[0] + 30 + "px")
     .style("top", d3.mouse(this)[1] + "px");
 };

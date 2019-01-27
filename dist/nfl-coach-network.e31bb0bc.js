@@ -167,7 +167,7 @@ module.exports = {
     "team": "New York Giants",
     "year": 2019
   }, {
-    "name": "Doug Pedersen",
+    "name": "Doug Pederson",
     "position": "Head Coach",
     "team": "Philadelphia Eagles",
     "year": 2019
@@ -304,7 +304,7 @@ module.exports = {
     "links": ["2008 Philadelphia Eagles", "2009 Philadelphia Eagles", "2010 Philadelphia Eagles", "2011 Philadelphia Eagles", "2012 Philadelphia Eagles", "2013 Kansas City Chiefs", "2014 Kansas City Chiefs", "2015 Kansas City Chiefs", "2016 Kansas City Chiefs", "2017 Kansas City Chiefs"]
   }, {
     "source": "Matt Nagy",
-    "target": "Doug Pedersen",
+    "target": "Doug Pederson",
     "weight": 0.4666666666666667,
     "links": ["2009 Philadelphia Eagles", "2010 Philadelphia Eagles", "2011 Philadelphia Eagles", "2012 Philadelphia Eagles", "2013 Kansas City Chiefs", "2014 Kansas City Chiefs", "2015 Kansas City Chiefs"]
   }, {
@@ -429,7 +429,7 @@ module.exports = {
     "links": ["1999 Philadelphia Eagles", "2000 Philadelphia Eagles", "2001 Philadelphia Eagles", "2002 Philadelphia Eagles", "2003 Philadelphia Eagles", "2004 Philadelphia Eagles", "2005 Philadelphia Eagles", "2006 Philadelphia Eagles", "2007 Philadelphia Eagles"]
   }, {
     "source": "John Harbaugh",
-    "target": "Doug Pedersen",
+    "target": "Doug Pederson",
     "weight": 0.06666666666666667,
     "links": ["1999 Philadelphia Eagles"]
   }, {
@@ -494,7 +494,7 @@ module.exports = {
     "links": ["1999 Philadelphia Eagles", "2000 Philadelphia Eagles", "2001 Philadelphia Eagles", "2002 Philadelphia Eagles", "2003 Philadelphia Eagles", "2004 Philadelphia Eagles", "2005 Philadelphia Eagles", "2006 Philadelphia Eagles", "2007 Philadelphia Eagles", "2008 Philadelphia Eagles"]
   }, {
     "source": "Sean McDermott",
-    "target": "Doug Pedersen",
+    "target": "Doug Pederson",
     "weight": 0.2,
     "links": ["1999 Philadelphia Eagles", "2009 Philadelphia Eagles", "2010 Philadelphia Eagles"]
   }, {
@@ -509,7 +509,7 @@ module.exports = {
     "links": ["1999 Philadelphia Eagles", "2000 Philadelphia Eagles", "2001 Philadelphia Eagles", "2002 Philadelphia Eagles", "2003 Philadelphia Eagles", "2004 Philadelphia Eagles", "2005 Philadelphia Eagles", "2006 Philadelphia Eagles", "2007 Philadelphia Eagles", "2008 Philadelphia Eagles", "2009 Philadelphia Eagles", "2010 Philadelphia Eagles"]
   }, {
     "source": "Pat Shurmur",
-    "target": "Doug Pedersen",
+    "target": "Doug Pederson",
     "weight": 0.06666666666666667,
     "links": ["1999 Philadelphia Eagles"]
   }, {
@@ -523,17 +523,17 @@ module.exports = {
     "weight": 0.6666666666666666,
     "links": ["1999 Philadelphia Eagles", "2000 Philadelphia Eagles", "2001 Philadelphia Eagles", "2002 Philadelphia Eagles", "2003 Philadelphia Eagles", "2004 Philadelphia Eagles", "2005 Philadelphia Eagles", "2006 Philadelphia Eagles", "2007 Philadelphia Eagles", "2008 Philadelphia Eagles"]
   }, {
-    "source": "Doug Pedersen",
+    "source": "Doug Pederson",
     "target": "Andy Reid",
     "weight": 0.7333333333333333,
     "links": ["1996 Green Bay Packers", "1997 Green Bay Packers", "1998 Green Bay Packers", "1999 Philadelphia Eagles", "2009 Philadelphia Eagles", "2010 Philadelphia Eagles", "2011 Philadelphia Eagles", "2012 Philadelphia Eagles", "2013 Kansas City Chiefs", "2014 Kansas City Chiefs", "2015 Kansas City Chiefs"]
   }, {
-    "source": "Doug Pedersen",
+    "source": "Doug Pederson",
     "target": "Ron Rivera",
     "weight": 0.06666666666666667,
     "links": ["1999 Philadelphia Eagles"]
   }, {
-    "source": "Doug Pedersen",
+    "source": "Doug Pederson",
     "target": "Frank Reich",
     "weight": 0.13333333333333333,
     "links": ["2016 Philadelphia Eagles", "2017 Philadelphia Eagles"]
@@ -28454,14 +28454,37 @@ var simulation = d3.forceSimulation().force("link", d3.forceLink().id(function (
 }).distance(50)).force("charge", d3.forceManyBody().strength(-400)).force("center", d3.forceCenter(width / 2, height / 2));
 d3.select("svg").empty();
 var tooltip = d3.select("body").append("div").style("opacity", 0).attr("class", "tooltip").style("background-color", "white").style("border", "solid").style("border-width", "2px").style("border-radius", "5px").style("padding", "5px").style("position", "absolute");
-var svg = d3.select("svg").attr("width", width).attr("height", height);
-var link = svg.append("g").attr("class", "links").selectAll("line").data(_data.default.links).enter().append("line");
-var node = svg.append("g").attr("class", "nodes").selectAll("circle").data(_data.default.nodes).enter().append("circle").attr("r", 20); //.attr("fill", "url(#image)");
-//.attr("filter", "url(#inset-shadow)");
-// node.append("title").text(function(d) {
-//   return d.name;
-// });
+var svg = d3.select("svg").attr("width", width).attr("height", height); // let defs = svg.append("defs");
+// let imgPattern = defs
+//   .selectAll("pattern")
+//   .data(data.nodes)
+//   .enter()
+//   .append("pattern")
+//   .attr("id", d => {
+//     return `${d.name
+//       .toLowerCase()
+//       .replace(" ", "-")
+//       .replace("'", "")}`;
+//   })
+//   .attr("width", 1)
+//   .attr("height", 1)
+//   .attr("patternUnits", "objectBoundingBox")
+//   .append("image")
+//   .attr("x", 0)
+//   .attr("y", 0)
+//   .attr("width", 40)
+//   .attr("height", 40)
+//   .attr("xlink:xlink:href", d => {
+//     return `./images/${d.name
+//       .toLowerCase()
+//       .replace(" ", "-")
+//       .replace("'", "")}.png`;
+//   });
 
+var link = svg.append("g").attr("class", "links").selectAll("line").data(_data.default.links).enter().append("line");
+var node = svg.append("g").attr("class", "nodes").selectAll("circle").data(_data.default.nodes).enter().append("circle").attr("r", 20).attr("fill", function (d) {
+  return "url(#".concat(d.name.toLowerCase().replace(" ", "-").replace("'", ""), ")");
+});
 simulation.nodes(_data.default.nodes).on("tick", ticked);
 simulation.force("link").links(_data.default.links);
 
@@ -28493,7 +28516,7 @@ var mousemoveNode = function mousemoveNode(d) {
 
 var mousemoveLink = function mousemoveLink(d) {
   console.log("link", d);
-  tooltip.html("".concat(d.source.name, " <-> ").concat(d.target.name, "<br/>").concat(d.links.join("<br/>"))).style("left", d3.mouse(this)[0] + 30 + "px").style("top", d3.mouse(this)[1] + "px");
+  tooltip.html("".concat(d.source.name, " &#8596 ").concat(d.target.name, "<br/>").concat(d.links.join("<br/>"))).style("left", d3.mouse(this)[0] + 30 + "px").style("top", d3.mouse(this)[1] + "px");
 };
 
 var mouseleave = function mouseleave(d) {
@@ -28571,7 +28594,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60986" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62677" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

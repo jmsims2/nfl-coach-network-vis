@@ -28506,6 +28506,7 @@ function ticked() {
 }
 
 var mouseover = function mouseover(d) {
+  if (this.style.opacity === "0.1") return;
   tooltip.style("opacity", 1);
   d3.select(this).style("stroke-width", "5px");
 };
@@ -28515,20 +28516,20 @@ var mousemoveNode = function mousemoveNode(d) {
 };
 
 var mousemoveLink = function mousemoveLink(d) {
-  console.log("link", d);
   tooltip.html("".concat(d.source.name, " &#8596 ").concat(d.target.name, "<br/>").concat(d.links.join("<br/>"))).style("left", d3.mouse(this)[0] + 30 + "px").style("top", d3.mouse(this)[1] + "px");
 };
 
 var mouseleave = function mouseleave(d) {
+  if (this.style.opacity === "0.1") return;
   tooltip.style("opacity", 0);
   d3.select(this).style("stroke-width", "3px");
 };
 
 d3.selectAll("circle").on("mouseover", mouseover).on("mousemove", mousemoveNode).on("mouseleave", mouseleave).on("click", connectedNodes);
 d3.selectAll("line").on("mouseover", function (d) {
-  return tooltip.style("opacity", 1);
+  if (this.style.opacity !== "0.1") tooltip.style("opacity", 1);
 }).on("mousemove", mousemoveLink).on("mouseleave", function (d) {
-  return tooltip.style("opacity", 0);
+  if (this.style.opacity !== "0.1") tooltip.style("opacity", 0);
 });
 var toggle = 0; //Create an array logging what is connected to what
 

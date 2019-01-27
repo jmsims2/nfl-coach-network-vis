@@ -124,6 +124,7 @@ function ticked() {
 }
 
 let mouseover = function(d) {
+  if (this.style.opacity === "0.1") return;
   tooltip.style("opacity", 1);
   d3.select(this).style("stroke-width", "5px");
 };
@@ -134,7 +135,6 @@ let mousemoveNode = function(d) {
     .style("top", d3.mouse(this)[1] + "px");
 };
 let mousemoveLink = function(d) {
-  console.log("link", d);
   tooltip
     .html(
       `${d.source.name} &#8596 ${d.target.name}<br/>${d.links.join("<br/>")}`
@@ -143,6 +143,7 @@ let mousemoveLink = function(d) {
     .style("top", d3.mouse(this)[1] + "px");
 };
 let mouseleave = function(d) {
+  if (this.style.opacity === "0.1") return;
   tooltip.style("opacity", 0);
   d3.select(this).style("stroke-width", "3px");
 };
@@ -154,9 +155,13 @@ d3.selectAll("circle")
   .on("click", connectedNodes);
 
 d3.selectAll("line")
-  .on("mouseover", d => tooltip.style("opacity", 1))
+  .on("mouseover", function(d) {
+    if (this.style.opacity !== "0.1") tooltip.style("opacity", 1);
+  })
   .on("mousemove", mousemoveLink)
-  .on("mouseleave", d => tooltip.style("opacity", 0));
+  .on("mouseleave", function(d) {
+    if (this.style.opacity !== "0.1") tooltip.style("opacity", 0);
+  });
 
 let toggle = 0;
 //Create an array logging what is connected to what

@@ -28448,7 +28448,7 @@ _data.default.links.forEach(function (l) {
 });
 
 var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 150;
 var simulation = d3.forceSimulation().force("link", d3.forceLink().id(function (d) {
   return d.name;
 }).distance(50)).force("charge", d3.forceManyBody().strength(-400)).force("center", d3.forceCenter(width / 2, height / 2));
@@ -28507,7 +28507,7 @@ function ticked() {
 
 var mouseover = function mouseover(d) {
   tooltip.style("opacity", 1);
-  d3.select(this).style("stroke", "black").style("opacity", 1);
+  d3.select(this).style("stroke-width", "5px");
 };
 
 var mousemoveNode = function mousemoveNode(d) {
@@ -28521,7 +28521,7 @@ var mousemoveLink = function mousemoveLink(d) {
 
 var mouseleave = function mouseleave(d) {
   tooltip.style("opacity", 0);
-  d3.select(this).style("stroke", "none").style("opacity", 0.8);
+  d3.select(this).style("stroke-width", "3px");
 };
 
 d3.selectAll("circle").on("mouseover", mouseover).on("mousemove", mousemoveNode).on("mouseleave", mouseleave).on("click", connectedNodes);

@@ -1,17 +1,44 @@
 <html>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <style>body {
-      overflow: hidden;
+      overflow-x: hidden;
+      background-color: #252525;
     }
     .links line {
       stroke: #aaa;
-      stroke-width: 3px;
+      stroke-width: 4px;
     }
 
     .nodes circle {
       pointer-events: all;
-      stroke: none;
+      stroke: #aaa;
+      stroke-width: 3px;
+    }
+
+    .title {
+      display: flex;
+      justify-content: center;
+      color: #aaa;
+    }
+
+    .footer {
+      color: #aaa;
+      display: flex;
+      justify-content: left;
+    }
+
+    a {
+      color: #aaa;
+    }
+
+    h1,
+    text,
+    p,
+    div {
+      font-family: "Montserrat", sans-serif;
     }</style>
   <body>
+    <div class="title"><h1>2019 NFL Head Coach Relationships</h1></div>
     <svg width="1500" height="700">
       <defs>
         <pattern id="matt-patricia" patternUnits="objectBoundingBox" height="1" width="1">
@@ -36,7 +63,7 @@
           <image x="0" y="0" height="40" width="40" xlink:href="/doug-marrone.6eb2d2fe.png"></image>
         </pattern>
         <pattern id="jason-garrett" patternUnits="objectBoundingBox" height="1" width="1">
-          <image x="0" y="0" height="40" width="40" xlink:href="/jason-garrett.3979e864.png"></image>
+          <image x="-5" y="-3" height="50" width="50" xlink:href="/jason-garrett.3979e864.png"></image>
         </pattern>
         <pattern id="vic-fangio" patternUnits="objectBoundingBox" height="1" width="1">
           <image x="0" y="0" height="40" width="40" xlink:href="/vic-fangio.c41cb251.png"></image>
@@ -45,10 +72,10 @@
           <image x="0" y="0" height="40" width="40" xlink:href="/adam-gase.d2f5e515.png"></image>
         </pattern>
         <pattern id="freddie-kitchens" patternUnits="objectBoundingBox" height="1" width="1">
-          <image x="0" y="0" height="40" width="40" xlink:href="/freddie-kitchens.3331d533.png"></image>
+          <image x="-4" y="-4" height="50" width="50" xlink:href="/freddie-kitchens.3331d533.png"></image>
         </pattern>
         <pattern id="frank-reich" patternUnits="objectBoundingBox" height="1" width="1">
-          <image x="0" y="0" height="40" width="40" xlink:href="/frank-reich.bc6b94c6.png"></image>
+          <image x="-7" y="-5" height="55" width="55" xlink:href="/frank-reich.bc6b94c6.png"></image>
         </pattern>
         <pattern id="bruce-arians" patternUnits="objectBoundingBox" height="1" width="1">
           <image x="0" y="0" height="40" width="40" xlink:href="/bruce-arians.f551ccd3.png"></image>
@@ -112,6 +139,12 @@
         </pattern>
       </defs>
     </svg>
+    <div class="footer">
+      <p>
+        Data compiled from Wikipedia. Made by
+        <a href="https://positiveskew.io">Jeff Sims</a>.
+      </p>
+    </div>
     <script src="/nfl-coach-network.e31bb0bc.js"></script>
   </body>
 </html>

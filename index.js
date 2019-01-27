@@ -8,10 +8,9 @@ let width = Math.max(
   document.documentElement.clientWidth,
   window.innerWidth || 0
 );
-let height = Math.max(
-  document.documentElement.clientHeight,
-  window.innerHeight || 0
-);
+let height =
+  Math.max(document.documentElement.clientHeight, window.innerHeight || 0) -
+  150;
 
 var simulation = d3
   .forceSimulation()
@@ -126,9 +125,7 @@ function ticked() {
 
 let mouseover = function(d) {
   tooltip.style("opacity", 1);
-  d3.select(this)
-    .style("stroke", "black")
-    .style("opacity", 1);
+  d3.select(this).style("stroke-width", "5px");
 };
 let mousemoveNode = function(d) {
   tooltip
@@ -147,9 +144,7 @@ let mousemoveLink = function(d) {
 };
 let mouseleave = function(d) {
   tooltip.style("opacity", 0);
-  d3.select(this)
-    .style("stroke", "none")
-    .style("opacity", 0.8);
+  d3.select(this).style("stroke-width", "3px");
 };
 
 d3.selectAll("circle")

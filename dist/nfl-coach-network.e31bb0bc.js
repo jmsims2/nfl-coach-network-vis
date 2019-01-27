@@ -28448,12 +28448,12 @@ _data.default.links.forEach(function (l) {
 });
 
 var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 150;
+var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 175;
 var simulation = d3.forceSimulation().force("link", d3.forceLink().id(function (d) {
   return d.name;
 }).distance(50)).force("charge", d3.forceManyBody().strength(-400)).force("center", d3.forceCenter(width / 2, height / 2));
 d3.select("svg").empty();
-var tooltip = d3.select("body").append("div").style("opacity", 0).attr("class", "tooltip").style("background-color", "white").style("border", "solid").style("border-width", "2px").style("border-radius", "5px").style("padding", "5px").style("position", "absolute");
+var tooltip = d3.select("body").append("div").style("opacity", 0).attr("class", "tooltip").style("background-color", "#252525").style("border", "solid").style("border-width", "2px").style("border-radius", "5px").style("border-color", "#aaa").style("color", "#aaa").style("padding", "5px").style("position", "absolute");
 var svg = d3.select("svg").attr("width", width).attr("height", height); // let defs = svg.append("defs");
 // let imgPattern = defs
 //   .selectAll("pattern")
@@ -28512,11 +28512,11 @@ var mouseover = function mouseover(d) {
 };
 
 var mousemoveNode = function mousemoveNode(d) {
-  tooltip.html("".concat(d.name, " - ").concat(d.team)).style("left", d3.mouse(this)[0] + 30 + "px").style("top", d3.mouse(this)[1] + "px");
+  tooltip.html("".concat(d.name, " - ").concat(d.team)).style("left", d3.mouse(this)[0] + 20 + "px").style("top", d3.mouse(this)[1] + "px");
 };
 
 var mousemoveLink = function mousemoveLink(d) {
-  tooltip.html("".concat(d.source.name, " &#8596 ").concat(d.target.name, "<br/>").concat(d.links.join("<br/>"))).style("left", d3.mouse(this)[0] + 30 + "px").style("top", d3.mouse(this)[1] + "px");
+  tooltip.html("".concat(d.source.name, " &#8596 ").concat(d.target.name, "<br/>").concat(d.links.join("<br/>"))).style("left", d3.mouse(this)[0] + 10 + "px").style("top", d3.mouse(this)[1] + "px");
 };
 
 var mouseleave = function mouseleave(d) {

@@ -10,7 +10,7 @@ let width = Math.max(
 );
 let height =
   Math.max(document.documentElement.clientHeight, window.innerHeight || 0) -
-  150;
+  175;
 
 var simulation = d3
   .forceSimulation()
@@ -33,10 +33,12 @@ let tooltip = d3
   .append("div")
   .style("opacity", 0)
   .attr("class", "tooltip")
-  .style("background-color", "white")
+  .style("background-color", "#252525")
   .style("border", "solid")
   .style("border-width", "2px")
   .style("border-radius", "5px")
+  .style("border-color", "#aaa")
+  .style("color", "#aaa")
   .style("padding", "5px")
   .style("position", "absolute");
 
@@ -131,7 +133,7 @@ let mouseover = function(d) {
 let mousemoveNode = function(d) {
   tooltip
     .html(`${d.name} - ${d.team}`)
-    .style("left", d3.mouse(this)[0] + 30 + "px")
+    .style("left", d3.mouse(this)[0] + 20 + "px")
     .style("top", d3.mouse(this)[1] + "px");
 };
 let mousemoveLink = function(d) {
@@ -139,7 +141,7 @@ let mousemoveLink = function(d) {
     .html(
       `${d.source.name} &#8596 ${d.target.name}<br/>${d.links.join("<br/>")}`
     )
-    .style("left", d3.mouse(this)[0] + 30 + "px")
+    .style("left", d3.mouse(this)[0] + 10 + "px")
     .style("top", d3.mouse(this)[1] + "px");
 };
 let mouseleave = function(d) {

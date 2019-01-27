@@ -130,7 +130,7 @@ let mouseover = function(d) {
 };
 let mousemoveNode = function(d) {
   tooltip
-    .html(d.name)
+    .html(`${d.name} - ${d.team}`)
     .style("left", d3.mouse(this)[0] + 30 + "px")
     .style("top", d3.mouse(this)[1] + "px");
 };

@@ -28512,7 +28512,7 @@ var mouseover = function mouseover(d) {
 };
 
 var mousemoveNode = function mousemoveNode(d) {
-  tooltip.html(d.name).style("left", d3.mouse(this)[0] + 30 + "px").style("top", d3.mouse(this)[1] + "px");
+  tooltip.html("".concat(d.name, " - ").concat(d.team)).style("left", d3.mouse(this)[0] + 30 + "px").style("top", d3.mouse(this)[1] + "px");
 };
 
 var mousemoveLink = function mousemoveLink(d) {

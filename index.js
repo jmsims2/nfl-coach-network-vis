@@ -174,11 +174,11 @@ d3.selectAll("circle")
 
 d3.selectAll("path")
   .on("mouseover", function(d) {
-    /*if (this.style.opacity !== "0.1")*/ tooltip.style("opacity", 1);
+    if (this.style.opacity !== "0.1") tooltip.style("opacity", 1);
   })
   .on("mousemove", mousemoveLink)
   .on("mouseleave", function(d) {
-    /*if (this.style.opacity !== "0.1")*/ tooltip.style("opacity", 0);
+    if (this.style.opacity !== "0.1") tooltip.style("opacity", 0);
   });
 
 let toggle = 0;

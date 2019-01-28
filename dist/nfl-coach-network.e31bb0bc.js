@@ -28543,11 +28543,9 @@ var mouseleave = function mouseleave(d) {
 
 d3.selectAll("circle").on("mouseover", mouseover).on("mousemove", mousemoveNode).on("mouseleave", mouseleave).on("click", connectedNodes);
 d3.selectAll("path").on("mouseover", function (d) {
-  /*if (this.style.opacity !== "0.1")*/
-  tooltip.style("opacity", 1);
+  if (this.style.opacity !== "0.1") tooltip.style("opacity", 1);
 }).on("mousemove", mousemoveLink).on("mouseleave", function (d) {
-  /*if (this.style.opacity !== "0.1")*/
-  tooltip.style("opacity", 0);
+  if (this.style.opacity !== "0.1") tooltip.style("opacity", 0);
 });
 var toggle = 0; //Create an array logging what is connected to what
 

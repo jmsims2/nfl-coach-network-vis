@@ -28451,7 +28451,7 @@ var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 
 var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 175;
 var simulation = d3.forceSimulation().force("link", d3.forceLink().id(function (d) {
   return d.name;
-}).distance(50)).force("charge", d3.forceManyBody().strength(-400)).force("center", d3.forceCenter(width / 2, height / 2));
+})).force("charge", d3.forceManyBody().strength(-300)).force("center", d3.forceCenter(width / 2 + 50, height / 2));
 d3.select("svg").empty();
 var tooltip = d3.select("body").append("div").style("opacity", 0).attr("class", "tooltip").style("background-color", "#252525").style("border", "solid").style("border-width", "2px").style("border-radius", "5px").style("border-color", "#aaa").style("color", "#aaa").style("padding", "5px").style("position", "absolute");
 var svg = d3.select("svg").attr("width", width).attr("height", height); // let defs = svg.append("defs");

@@ -4,7 +4,17 @@
       overflow-x: hidden;
       background-color: #252525;
     }
-    .links line {
+    /* .links line {
+      stroke: #aaa;
+      stroke-width: 4px;
+    } */
+
+    path {
+      pointer-events: all;
+    }
+
+    path.link {
+      fill: transparent;
       stroke: #aaa;
       stroke-width: 4px;
     }
@@ -151,7 +161,8 @@
     <div class="footer">
       <p>
         Data compiled from Wikipedia. Made by
-        <a href="https://positiveskew.io">Jeff Sims</a>.
+        <a href="https://positiveskew.io">Jeff Sims</a>. Code can be found
+        <a href="https://github.com/jmsims2/nfl-coach-network-vis">here</a>.
       </p>
     </div>
     <script src="/nfl-coach-network.e31bb0bc.js"></script>

@@ -28482,7 +28482,7 @@ var svg = d3.select("svg").attr("width", width).attr("height", height); // let d
 //       .replace("'", "")}.png`;
 //   });
 
-var link = svg.append("g").attr("class", "links").selectAll("line").data(_data.default.links).enter().append("line");
+var link = svg.append("g").attr("class", "links").selectAll("path").data(_data.default.links).enter().append("path").attr("class", "link");
 var node = svg.append("g").attr("class", "nodes").selectAll("circle").data(_data.default.nodes).enter().append("circle").attr("r", radius).attr("fill", function (d) {
   return "url(#".concat(d.name.toLowerCase().replace(" ", "-").replace("'", ""), ")");
 });
@@ -28490,14 +28490,24 @@ simulation.nodes(_data.default.nodes).on("tick", ticked);
 simulation.force("link").links(_data.default.links);
 
 function ticked() {
-  link.attr("x1", function (d) {
-    return d.source.x;
-  }).attr("y1", function (d) {
-    return d.source.y;
-  }).attr("x2", function (d) {
-    return d.target.x;
-  }).attr("y2", function (d) {
-    return d.target.y;
+  // link
+  //   .attr("x1", function(d) {
+  //     return d.source.x;
+  //   })
+  //   .attr("y1", function(d) {
+  //     return d.source.y;
+  //   })
+  //   .attr("x2", function(d) {
+  //     return d.target.x;
+  //   })
+  //   .attr("y2", function(d) {
+  //     return d.target.y;
+  //   });
+  link.attr("d", function (d) {
+    var dx = d.target.x - d.source.x;
+    var dy = d.target.y - d.source.y;
+    var dr = Math.sqrt(dx * dx + dy * dy);
+    return "M ".concat(d.source.x, ", ").concat(d.source.y, ", A").concat(dr, ", ").concat(dr, ", 0 0, 1 ").concat(d.target.x, ", ").concat(d.target.y);
   });
   node.attr("cx", function (d) {
     return d.x = Math.max(radius, Math.min(width - radius, d.x));
@@ -28532,10 +28542,12 @@ var mouseleave = function mouseleave(d) {
 };
 
 d3.selectAll("circle").on("mouseover", mouseover).on("mousemove", mousemoveNode).on("mouseleave", mouseleave).on("click", connectedNodes);
-d3.selectAll("line").on("mouseover", function (d) {
-  if (this.style.opacity !== "0.1") tooltip.style("opacity", 1);
+d3.selectAll("path").on("mouseover", function (d) {
+  /*if (this.style.opacity !== "0.1")*/
+  tooltip.style("opacity", 1);
 }).on("mousemove", mousemoveLink).on("mouseleave", function (d) {
-  if (this.style.opacity !== "0.1") tooltip.style("opacity", 0);
+  /*if (this.style.opacity !== "0.1")*/
+  tooltip.style("opacity", 0);
 });
 var toggle = 0; //Create an array logging what is connected to what
 

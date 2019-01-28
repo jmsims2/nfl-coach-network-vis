@@ -76,10 +76,11 @@ let svg = d3
 let link = svg
   .append("g")
   .attr("class", "links")
-  .selectAll("line")
+  .selectAll("path")
   .data(data.links)
   .enter()
-  .append("line");
+  .append("path")
+  .attr("class", "link");
 
 let node = svg
   .append("g")
@@ -100,19 +101,28 @@ simulation.nodes(data.nodes).on("tick", ticked);
 simulation.force("link").links(data.links);
 
 function ticked() {
-  link
-    .attr("x1", function(d) {
-      return d.source.x;
-    })
-    .attr("y1", function(d) {
-      return d.source.y;
-    })
-    .attr("x2", function(d) {
-      return d.target.x;
-    })
-    .attr("y2", function(d) {
-      return d.target.y;
-    });
+  // link
+  //   .attr("x1", function(d) {
+  //     return d.source.x;
+  //   })
+  //   .attr("y1", function(d) {
+  //     return d.source.y;
+  //   })
+  //   .attr("x2", function(d) {
+  //     return d.target.x;
+  //   })
+  //   .attr("y2", function(d) {
+  //     return d.target.y;
+  //   });
+  link.attr("d", function(d) {
+    let dx = d.target.x - d.source.x;
+    let dy = d.target.y - d.source.y;
+    let dr = Math.sqrt(dx * dx + dy * dy);
+
+    return `M ${
+      d.source.x
+    }, ${d.source.y}, A${dr}, ${dr}, 0 0, 1 ${d.target.x}, ${d.target.y}`;
+  });
 
   node
     .attr("cx", function(d) {
@@ -162,13 +172,13 @@ d3.selectAll("circle")
   .on("mouseleave", mouseleave)
   .on("click", connectedNodes);
 
-d3.selectAll("line")
+d3.selectAll("path")
   .on("mouseover", function(d) {
-    if (this.style.opacity !== "0.1") tooltip.style("opacity", 1);
+    /*if (this.style.opacity !== "0.1")*/ tooltip.style("opacity", 1);
   })
   .on("mousemove", mousemoveLink)
   .on("mouseleave", function(d) {
-    if (this.style.opacity !== "0.1") tooltip.style("opacity", 0);
+    /*if (this.style.opacity !== "0.1")*/ tooltip.style("opacity", 0);
   });
 
 let toggle = 0;

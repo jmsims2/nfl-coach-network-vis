@@ -162,7 +162,10 @@ let mousemoveLink = function(d) {
 };
 let mouseleave = function(d) {
   if (this.style.opacity === "0.1") return;
-  tooltip.style("opacity", 0);
+  tooltip
+    .style("opacity", 0)
+    .style("left", "0px")
+    .style("top", "0px");
   d3.select(this).style("stroke-width", "3px");
 };
 
@@ -178,7 +181,11 @@ d3.selectAll("path")
   })
   .on("mousemove", mousemoveLink)
   .on("mouseleave", function(d) {
-    if (this.style.opacity !== "0.1") tooltip.style("opacity", 0);
+    if (this.style.opacity !== "0.1")
+      tooltip
+        .style("opacity", 0)
+        .style("left", "0px")
+        .style("top", "0px");
   });
 
 let toggle = 0;

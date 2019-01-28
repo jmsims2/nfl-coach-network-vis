@@ -28537,7 +28537,7 @@ var mousemoveLink = function mousemoveLink(d) {
 
 var mouseleave = function mouseleave(d) {
   if (this.style.opacity === "0.1") return;
-  tooltip.style("opacity", 0);
+  tooltip.style("opacity", 0).style("left", "0px").style("top", "0px");
   d3.select(this).style("stroke-width", "3px");
 };
 
@@ -28545,7 +28545,7 @@ d3.selectAll("circle").on("mouseover", mouseover).on("mousemove", mousemoveNode)
 d3.selectAll("path").on("mouseover", function (d) {
   if (this.style.opacity !== "0.1") tooltip.style("opacity", 1);
 }).on("mousemove", mousemoveLink).on("mouseleave", function (d) {
-  if (this.style.opacity !== "0.1") tooltip.style("opacity", 0);
+  if (this.style.opacity !== "0.1") tooltip.style("opacity", 0).style("left", "0px").style("top", "0px");
 });
 var toggle = 0; //Create an array logging what is connected to what
 

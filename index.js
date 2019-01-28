@@ -11,8 +11,9 @@ let width = Math.max(
 let height =
   Math.max(document.documentElement.clientHeight, window.innerHeight || 0) -
   175;
+let radius = 20;
 
-var simulation = d3
+let simulation = d3
   .forceSimulation()
   .force(
     "link",
@@ -20,8 +21,8 @@ var simulation = d3
       return d.name;
     })
   )
-  .force("charge", d3.forceManyBody().strength(-300))
-  .force("center", d3.forceCenter(width / 2 + 50, height / 2));
+  .force("charge", d3.forceManyBody().strength(-400))
+  .force("center", d3.forceCenter(width / 2, height / 2));
 
 d3.select("svg").empty();
 
@@ -87,7 +88,7 @@ let node = svg
   .data(data.nodes)
   .enter()
   .append("circle")
-  .attr("r", 20)
+  .attr("r", radius)
   .attr("fill", d => {
     return `url(#${d.name
       .toLowerCase()
@@ -115,10 +116,18 @@ function ticked() {
 
   node
     .attr("cx", function(d) {
-      return d.x;
+      return (d.x = Math.max(radius, Math.min(width - radius, d.x)));
     })
     .attr("cy", function(d) {
-      return d.y;
+      return (d.y = Math.max(radius, Math.min(height - radius, d.y)));
+    });
+
+  node
+    .attr("cx", function(d) {
+      return (d.x = Math.max(radius, Math.min(width - radius, d.x)));
+    })
+    .attr("cy", function(d) {
+      return (d.y = Math.max(radius, Math.min(height - radius, d.y)));
     });
 }
 

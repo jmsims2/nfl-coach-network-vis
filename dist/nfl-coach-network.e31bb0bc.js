@@ -28449,9 +28449,10 @@ _data.default.links.forEach(function (l) {
 
 var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 175;
+var radius = 20;
 var simulation = d3.forceSimulation().force("link", d3.forceLink().id(function (d) {
   return d.name;
-})).force("charge", d3.forceManyBody().strength(-300)).force("center", d3.forceCenter(width / 2 + 50, height / 2));
+})).force("charge", d3.forceManyBody().strength(-400)).force("center", d3.forceCenter(width / 2, height / 2));
 d3.select("svg").empty();
 var tooltip = d3.select("body").append("div").style("opacity", 0).attr("class", "tooltip").style("background-color", "#252525").style("border", "solid").style("border-width", "2px").style("border-radius", "5px").style("border-color", "#aaa").style("color", "#aaa").style("padding", "5px").style("position", "absolute");
 var svg = d3.select("svg").attr("width", width).attr("height", height); // let defs = svg.append("defs");
@@ -28482,7 +28483,7 @@ var svg = d3.select("svg").attr("width", width).attr("height", height); // let d
 //   });
 
 var link = svg.append("g").attr("class", "links").selectAll("line").data(_data.default.links).enter().append("line");
-var node = svg.append("g").attr("class", "nodes").selectAll("circle").data(_data.default.nodes).enter().append("circle").attr("r", 20).attr("fill", function (d) {
+var node = svg.append("g").attr("class", "nodes").selectAll("circle").data(_data.default.nodes).enter().append("circle").attr("r", radius).attr("fill", function (d) {
   return "url(#".concat(d.name.toLowerCase().replace(" ", "-").replace("'", ""), ")");
 });
 simulation.nodes(_data.default.nodes).on("tick", ticked);
@@ -28499,9 +28500,14 @@ function ticked() {
     return d.target.y;
   });
   node.attr("cx", function (d) {
-    return d.x;
+    return d.x = Math.max(radius, Math.min(width - radius, d.x));
   }).attr("cy", function (d) {
-    return d.y;
+    return d.y = Math.max(radius, Math.min(height - radius, d.y));
+  });
+  node.attr("cx", function (d) {
+    return d.x = Math.max(radius, Math.min(width - radius, d.x));
+  }).attr("cy", function (d) {
+    return d.y = Math.max(radius, Math.min(height - radius, d.y));
   });
 }
 

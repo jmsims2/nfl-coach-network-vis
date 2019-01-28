@@ -149,16 +149,16 @@ let mouseover = function(d) {
 let mousemoveNode = function(d) {
   tooltip
     .html(`${d.name} - ${d.team}`)
-    .style("left", d3.mouse(this)[0] + 20 + "px")
-    .style("top", d3.mouse(this)[1] + "px");
+    .style("left", `${d3.mouse(this)[0] + 20}px`)
+    .style("top", `${d3.mouse(this)[1] + 55}px`);
 };
 let mousemoveLink = function(d) {
   tooltip
     .html(
       `${d.source.name} &#8596 ${d.target.name}<br/>${d.links.join("<br/>")}`
     )
-    .style("left", d3.mouse(this)[0] + 10 + "px")
-    .style("top", d3.mouse(this)[1] + "px");
+    .style("left", `${d3.mouse(this)[0] + 10}px`)
+    .style("top", `${d3.mouse(this)[1] + 20}px`);
 };
 let mouseleave = function(d) {
   if (this.style.opacity === "0.1") return;

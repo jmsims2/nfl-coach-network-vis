@@ -28528,11 +28528,11 @@ var mouseover = function mouseover(d) {
 };
 
 var mousemoveNode = function mousemoveNode(d) {
-  tooltip.html("".concat(d.name, " - ").concat(d.team)).style("left", d3.mouse(this)[0] + 20 + "px").style("top", d3.mouse(this)[1] + "px");
+  tooltip.html("".concat(d.name, " - ").concat(d.team)).style("left", "".concat(d3.mouse(this)[0] + 20, "px")).style("top", "".concat(d3.mouse(this)[1] + 55, "px"));
 };
 
 var mousemoveLink = function mousemoveLink(d) {
-  tooltip.html("".concat(d.source.name, " &#8596 ").concat(d.target.name, "<br/>").concat(d.links.join("<br/>"))).style("left", d3.mouse(this)[0] + 10 + "px").style("top", d3.mouse(this)[1] + "px");
+  tooltip.html("".concat(d.source.name, " &#8596 ").concat(d.target.name, "<br/>").concat(d.links.join("<br/>"))).style("left", "".concat(d3.mouse(this)[0] + 10, "px")).style("top", "".concat(d3.mouse(this)[1] + 20, "px"));
 };
 
 var mouseleave = function mouseleave(d) {
